@@ -53,7 +53,7 @@ function App() {
 
   useEffect(() => {
     getCurrentLocation()
-  }, [])
+  }, [getCurrentLocation])
 
   return (
     <div className='back-ground'>

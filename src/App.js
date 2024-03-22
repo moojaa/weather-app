@@ -15,13 +15,13 @@ function App() {
 
   const cities = [`Paris`, `New York`, `Seoul`, `Tokyo`]
 
-  const getCurrentLocation = () => {
+  const getCurrentLocation = useCallback(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       let lat = position.coords.latitude
       let lon = position.coords.longitude
       getWeatherInfo(lat, lon)
     });
-  }
+  },[])
 
   const getWeatherInfo = async (lat, lon) => {
     try{
